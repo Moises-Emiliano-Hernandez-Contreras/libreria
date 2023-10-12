@@ -59,7 +59,7 @@
 					<h3 class="panel-title"><i class="zmdi zmdi-refresh"></i> &nbsp; ACTUALIZAR LIBRO</h3>
 				</div>
 				<div class="panel-body">
-					<form method="POST" action="/book-config" enctype="multiform/form-data">
+					<form method="POST" action="/book-config" enctype="multipart/form-data">
 						@csrf
 						<input type="hidden" name="id" value="{{$book[0]->id}}">
 						<fieldset>

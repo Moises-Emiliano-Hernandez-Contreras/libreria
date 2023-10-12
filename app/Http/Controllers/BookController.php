@@ -107,8 +107,9 @@ class BookController extends Controller
         $libroAct->summary=$request->resumen_up;         
         $libroAct->downloadable=intval($request->optionsPDF);                        
         if($request->imagen_up!=null){
-            $libroAct->image_name=$request->file("image_up")->getClientOriginalName();                                                
-            \Storage::disk('local')->put($request->file('image_up')->getClientOriginalName(),  \File::get($request->file('image_up')));     
+/*             $libroAct->image_name=$request->file("image_up")->getClientOriginalName();
+            \Storage::disk('local')->put($request->file('image_up')->getClientOriginalName(),  \File::get($request->file('image_up')));      */
+            return $request->imagen_up;
         }else{
             $libroAct->image_name=$libroAct->image_name;
         }        
@@ -118,6 +119,6 @@ class BookController extends Controller
         }else{
             $libroAct->pdf_name=$libroAct->pdf_name;
         }        
-        return $libroAct;
+        return $request->imagen_up;
     }
 }
